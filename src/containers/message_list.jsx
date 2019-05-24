@@ -14,10 +14,10 @@ class MessageList extends React.Component {
   }
 
   render() {
-    const { messages } = this.props;
+    const { activeChannel, messages } = this.props;
     return (
       <div>
-        <h2>channel name</h2>
+        <h2>{`#${activeChannel}`}</h2>
         <ul className="list-unstyled">
           {messages.map(message => (
             <li key={message.created_at}>
@@ -31,7 +31,7 @@ class MessageList extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { messages: state.messages };
+  return { activeChannel: state.activeChannel, messages: state.messages };
 }
 
 function mapDispatchToProps(dispatch) {
