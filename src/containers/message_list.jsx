@@ -1,11 +1,18 @@
 /* eslint react/prefer-stateless-function: off */
 
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
+import { fetchMessages } from '../actions';
 
 import Message from '../components/message';
 
 class MessageList extends React.Component {
+  componentWillMount() {
+    this.props.fetchMessages();
+  }
+
   render() {
     const { messages } = this.props;
     return (
@@ -14,17 +21,7 @@ class MessageList extends React.Component {
         <ul className="list-unstyled">
           {messages.map(message => (
             <li key={message.created_at}>
-              <div>
-                <div>
-                  <span>
-                    {message.author}
-                  </span>
-                  <span className="text-info">
-                    {message.created_at.match(/\d\d:\d\d:\d\d/)[0]}
-                  </span>
-                </div>
-                <Message message={message} />
-              </div>
+              <Message message={message} />
             </li>
           ))}
         </ul>
@@ -37,4 +34,8 @@ function mapStateToProps(state) {
   return { messages: state.messages };
 }
 
-export default connect(mapStateToProps, null)(MessageList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchMessages }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageList);

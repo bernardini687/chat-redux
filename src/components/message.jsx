@@ -7,7 +7,17 @@ export default class Message extends React.Component {
     const { message } = this.props;
     return (
       <div>
-        {message.content}
+        <div>
+          <span>
+            {message.author}
+          </span>
+          <span className="text-info">
+            {message.created_at.match(/\d\d:\d\d:\d\d/)[0]}
+          </span>
+        </div>
+        <div>
+          {message.content}
+        </div>
       </div>
     );
   }
