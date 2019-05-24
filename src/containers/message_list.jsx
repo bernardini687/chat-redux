@@ -1,3 +1,5 @@
+/* eslint react/prefer-stateless-function: off */
+
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -9,7 +11,7 @@ class MessageList extends React.Component {
     return (
       <div>
         <h2>channel name</h2>
-        <ul>
+        <ul className="list-unstyled">
           {messages.map(message => (
             <li key={message.created_at}>
               <div>
@@ -17,7 +19,7 @@ class MessageList extends React.Component {
                   <span>
                     {message.author}
                   </span>
-                  <span>
+                  <span className="text-info">
                     {message.created_at.match(/\d\d:\d\d:\d\d/)[0]}
                   </span>
                 </div>
