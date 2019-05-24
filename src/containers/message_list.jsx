@@ -12,7 +12,17 @@ class MessageList extends React.Component {
         <ul>
           {messages.map(message => (
             <li key={message.created_at}>
-              <Message message={message} />
+              <div>
+                <div>
+                  <span>
+                    {message.author}
+                  </span>
+                  <span>
+                    {message.created_at.match(/\d\d:\d\d:\d\d/)[0]}
+                  </span>
+                </div>
+                <Message message={message} />
+              </div>
             </li>
           ))}
         </ul>
