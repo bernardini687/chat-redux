@@ -24,18 +24,32 @@ const reducers = combineReducers({
   member: memberReducer
 });
 
+const testMessages = [
+  {
+    author: 'anonymous92',
+    content: 'Hello world!',
+    created_at: '2017-09-26T23:03:16.365Z'
+  },
+  {
+    author: 'anonymous77',
+    content: 'My name is anonymous77',
+    created_at: '2017-09-26T23:03:21.194Z'
+  }
+];
+
 const initialState = {
-  messages: [],
+  messages: testMessages,
   channels: ['catsinspacesuits', 'royalcats'],
-  selectedChannel: 'catsinspacesuits',
-  currentMember: prompt('Your name, kind sir:') || `kitteh${Math.random().toString().substring(1, 5)}`
+  activeChannel: 'catsinspacesuits',
+  member: prompt('Your name, kind sir:') || `kitteh${Math.random().toString().substring(1, 5)}`
 };
 
 const middlewares = applyMiddleware(logger, reduxPromise);
+const store = createStore(reducers, initialState, middlewares);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')

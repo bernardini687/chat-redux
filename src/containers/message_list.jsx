@@ -1,21 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-  return {
+import Message from '../components/message';
 
-  };
-}
-
-export class MessageList extends React.Component {
+class MessageList extends React.Component {
   render() {
+    const { messages } = this.props;
     return (
-      <div></div>
+      <div>
+        <h2>channel name</h2>
+        <ul>
+          {messages.map(message => (
+            <li key={message.created_at}>
+              <Message message={message} />
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }
 
-export default connect(
-  mapStateToProps,
-// Implement map dispatch to props
-)(MessageList);
+function mapStateToProps(state) {
+  return { messages: state.messages };
+}
+
+export default connect(mapStateToProps, null)(MessageList);
