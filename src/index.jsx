@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
+import reduxPromise from 'redux-promise';
 
 // internal modules
 import App from './components/app';
@@ -30,7 +31,7 @@ const initialState = {
   currentMember: prompt('Your name, kind sir:') || `kitteh${Math.random().toString().substring(1, 5)}`
 };
 
-const middlewares = applyMiddleware(logger);
+const middlewares = applyMiddleware(logger, reduxPromise);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
