@@ -3,7 +3,6 @@
   justify-content: $content;
   align-items: center;
 }
-
 body {
   font-family: Helvetica;
 }
@@ -15,6 +14,9 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.message-header {
+  @include flex(space-between);
+}
 form {
   input {
     width: 80%;
@@ -22,7 +24,4 @@ form {
   button {
     width: 20%;
   }
-}
-.message-header {
-  @include flex(space-between);
 }
