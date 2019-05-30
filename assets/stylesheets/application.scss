@@ -1,7 +1,28 @@
+@mixin flex($content) {
+  display: flex;
+  justify-content: $content;
+  align-items: center;
+}
+
 body {
   font-family: Helvetica;
+}
+#root {
+  height: 100vh;
+  @include flex(center);
 }
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+form {
+  input {
+    width: 80%;
+  }
+  button {
+    width: 20%;
+  }
+}
+.message-header {
+  @include flex(space-between);
 }

@@ -7,7 +7,7 @@ export default class Message extends React.Component {
     const { message } = this.props;
     return (
       <div>
-        <div>
+        <div className="message-header">
           <span>
             {message.author}
           </span>

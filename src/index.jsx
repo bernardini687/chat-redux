@@ -41,7 +41,8 @@ const initialState = {
   messages: testMessages,
   channels: ['catsinspacesuits', 'royalcats'],
   activeChannel: 'catsinspacesuits',
-  member: prompt('Your name, kind sir:') || `kitteh${Math.random().toString().substring(1, 5)}`
+  // member: prompt('Your name, kind sir:') || `kitteh${Math.random().toString().substring(1, 5)}`
+  member: `kitteh${Math.random().toString().substring(1, 5)}`
 };
 
 const middlewares = applyMiddleware(logger, reduxPromise);
