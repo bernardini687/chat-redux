@@ -13,6 +13,14 @@ class MessageList extends React.Component {
     this.props.fetchMessages();
   }
 
+  componentDidMount() {
+    // fetchMessages(channel) on interval
+  }
+
+  componentWillUnmount() {
+    // clear interval
+  }
+
   render() {
     const { activeChannel, messages } = this.props;
     return (
