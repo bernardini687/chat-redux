@@ -6,7 +6,7 @@ export default class Message extends React.Component {
   render() {
     const { message } = this.props;
     return (
-      <div>
+      <li>
         <div className="message-header">
           <span>
             {message.author}
@@ -18,7 +18,7 @@ export default class Message extends React.Component {
         <div>
           {message.content}
         </div>
-      </div>
+      </li>
     );
   }
 }

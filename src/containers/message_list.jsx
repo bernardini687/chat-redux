@@ -10,7 +10,8 @@ import Message from '../components/message';
 
 class MessageList extends React.Component {
   componentWillMount() {
-    this.props.fetchMessages();
+    const { activeChannel } = this.props;
+    this.props.fetchMessages(activeChannel);
   }
 
   componentDidMount() {
@@ -28,9 +29,7 @@ class MessageList extends React.Component {
         <h2>{`#${activeChannel}`}</h2>
         <ul className="list-unstyled">
           {messages.map(message => (
-            <li key={message.created_at}>
-              <Message message={message} />
-            </li>
+            <Message key={message.id} message={message} />
           ))}
         </ul>
       </div>
