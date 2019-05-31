@@ -1,43 +1,38 @@
-@mixin flex($content) {
-  display: flex;
-  justify-content: $content;
-  align-items: center;
-}
-body {
-  font-family: Helvetica;
-}
-#root {
-  height: 100vh;
-  @include flex(center);
-}
-.app {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.message-header {
-  @include flex(space-between);
-}
-form {
-  input {
-    width: 220px;
-  }
-  button {
-    width: 50px;
-  }
-}
-.channels-container {
-  width: 150px;
-  ul li:hover {
-    cursor: pointer;
-  }
-}
-.messages {
-  max-height: 500px;
-  overflow: hidden;
-}
-.app {
-  @include flex(space-between);
-}
-.active {
-  font-weight: 900;
-}
+// @mixin flex($content) {
+//   display: flex;
+//   justify-content: $content;
+//   align-items: center;
+// }
+// body {
+//   font-family: Helvetica;
+// }
+// #root {
+//   height: 100vh;
+//   @include flex(center);
+// }
+// .app {
+//   width: 80vw;
+// }
+// .message-header {
+//   @include flex(space-between);
+// }
+// form {
+//   input {
+//     // width: 220px;
+//   }
+//   button {
+//     // width: 50px;
+//   }
+// }
+// .channel-list {
+//   ul li:hover {
+//     cursor: pointer;
+//   }
+// }
+// .message-list {
+//   max-height: 500px;
+//   overflow: hidden;
+// }
+// .active {
+//   font-weight: 600;
+// }

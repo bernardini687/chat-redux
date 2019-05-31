@@ -35,7 +35,7 @@ class MessageList extends React.Component {
     return (
       <div>
         <h2>#{activeChannel}</h2>
-        <ul className="list-unstyled messages" ref={(list) => { this.list = list; }}>
+        <ul className="list-unstyled message-list" ref={(list) => { this.list = list; }}>
           {messages.map(message => (
             <Message key={message.id} message={message} />
           ))}
