@@ -20,8 +20,10 @@ class MessageForm extends React.Component {
     e.preventDefault();
     const { activeChannel, member } = this.props;
     const { input } = this.state;
-    this.props.createMessage(activeChannel, member, input);
-    this.setState({ input: '' });
+    if (input) {
+      this.props.createMessage(activeChannel, member, input);
+      this.setState({ input: '' });
+    }
   }
 
   render() {
