@@ -11,13 +11,11 @@ import MessageForm from '../containers/message_form';
 
 class MessageList extends React.Component {
   componentWillMount() {
-    // const { activeChannel } = this.props;
-    // this.props.fetchMessages(activeChannel);
-    this.props.fetchMessages();
+    this.fetchMessages();
   }
 
   componentDidMount() {
-    // fetchMessages(channel) on interval
+    this.refresher = setInterval(this.fetchMessages, 5000);
   }
 
   componentDidUpdate() {
@@ -25,7 +23,11 @@ class MessageList extends React.Component {
   }
 
   componentWillUnmount() {
-    // clear interval
+    clearInterval(this.refresher);
+  }
+
+  fetchMessages = () => {
+    this.props.fetchMessages(this.props.activeChannel);
   }
 
   render() {
@@ -33,7 +35,7 @@ class MessageList extends React.Component {
     return (
       <div>
         <h2>#{activeChannel}</h2>
-        <ul className="list-unstyled" ref={(list) => { this.list = list; }}>
+        <ul className="list-unstyled messages" ref={(list) => { this.list = list; }}>
           {messages.map(message => (
             <Message key={message.id} message={message} />
           ))}
