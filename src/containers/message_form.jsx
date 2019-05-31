@@ -12,6 +12,10 @@ export class MessageForm extends React.Component {
     this.state = { input: '' };
   }
 
+  // componentDidMount() {
+  //   this.messageBox.focus();
+  // }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { activeChannel, member } = this.props;

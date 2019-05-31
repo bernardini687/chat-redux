@@ -31,6 +31,7 @@ const initialState = {
   member: `kitteh${Math.random().toString().substring(1, 5)}`
 };
 
+// middlewares
 const middlewares = applyMiddleware(logger, reduxPromise);
 const store = createStore(reducers, initialState, middlewares);
 
