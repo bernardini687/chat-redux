@@ -42,10 +42,7 @@ class MessageForm extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    activeChannel: state.activeChannel,
-    member: state.member
-  };
+  return { activeChannel: state.activeChannel, member: state.member };
 }
 
 function mapDispatchToProps(dispatch) {
