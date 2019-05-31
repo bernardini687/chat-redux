@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import { createMessage } from '../actions';
 
-export class MessageForm extends React.Component {
+class MessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { input: '' };
