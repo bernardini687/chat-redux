@@ -27,16 +27,16 @@ export class MessageForm extends React.Component {
   render() {
     const { input } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            onChange={e => this.setState({ input: e.target.value })}
-            value={input}
-            type="text"
-          />
-          <button type="submit">Send</button>
-        </form>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <input
+          autoComplete="off"
+          ref={(text) => { this.messageBox = text; }}
+          onChange={e => this.setState({ input: e.target.value })}
+          value={input}
+          type="text"
+        />
+        <button type="submit">Send</button>
+      </form>
     );
   }
 }
