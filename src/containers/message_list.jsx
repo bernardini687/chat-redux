@@ -13,7 +13,7 @@ class MessageList extends React.Component {
   componentWillMount() {
     // const { activeChannel } = this.props;
     // this.props.fetchMessages(activeChannel);
-    this.fetchMessages();
+    this.props.fetchMessages();
   }
 
   componentDidMount() {

@@ -16,20 +16,19 @@ import activeChannelReducer from './reducers/active_channel_reducer';
 
 const identityReducer = (state = null) => state;
 
-const reducers = combineReducers({
-  // changeMe: (state = null, action) => state
-  messages: messagesReducer,
-  channels: identityReducer,
-  activeChannel: activeChannelReducer,
-  member: identityReducer
-});
-
 const initialState = {
   messages: [],
   channels: ['catsinspacesuits', 'royalcats'],
   activeChannel: 'catsinspacesuits',
   member: `kitteh${Math.random().toString().substring(1, 5)}`
 };
+
+const reducers = combineReducers({
+  messages: messagesReducer,
+  channels: identityReducer,
+  activeChannel: activeChannelReducer,
+  member: identityReducer
+});
 
 // middlewares
 const middlewares = applyMiddleware(logger, reduxPromise);
