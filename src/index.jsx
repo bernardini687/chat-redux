@@ -24,24 +24,10 @@ const reducers = combineReducers({
   member: memberReducer
 });
 
-const testMessages = [
-  {
-    author: 'anonymous92',
-    content: 'Hello world!',
-    created_at: '2017-09-26T23:03:16.365Z'
-  },
-  {
-    author: 'anonymous77',
-    content: 'My name is anonymous77',
-    created_at: '2017-09-26T23:03:21.194Z'
-  }
-];
-
 const initialState = {
-  messages: testMessages,
+  messages: [],
   channels: ['catsinspacesuits', 'royalcats'],
   activeChannel: 'catsinspacesuits',
-  // member: prompt('Your name, kind sir:') || `kitteh${Math.random().toString().substring(1, 5)}`
   member: `kitteh${Math.random().toString().substring(1, 5)}`
 };
 
