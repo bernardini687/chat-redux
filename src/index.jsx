@@ -18,7 +18,7 @@ const identityReducer = (state = null) => state;
 
 const initialState = {
   messages: [],
-  channels: ['catsinspacesuits', 'royalcats'],
+  channels: ['catsinspacesuits', 'royalcats', 'submacats'],
   activeChannel: 'catsinspacesuits',
   member: `kitteh${Math.random().toString().substring(1, 5)}`
 };
