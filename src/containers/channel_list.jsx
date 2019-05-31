@@ -32,7 +32,7 @@ class ChannelList extends React.Component {
   render() {
     return (
       <div className="channel-list">
-        <ul className="list-unstyled">
+        <ul className="list-unstyled text-info">
           {this.props.channels.map(this.renderChannel)}
         </ul>
       </div>
