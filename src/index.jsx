@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { logger } from 'redux-logger';
+import logger from 'redux-logger';
 import reduxPromise from 'redux-promise';
 
 // internal modules
@@ -12,16 +12,16 @@ import '../assets/stylesheets/application.scss';
 
 // state and reducers
 import messagesReducer from './reducers/messages_reducer';
-import channelsReducer from './reducers/channels_reducer';
 import activeChannelReducer from './reducers/active_channel_reducer';
-import memberReducer from './reducers/member_reducer';
+
+const identityReducer = (state = null) => state;
 
 const reducers = combineReducers({
   // changeMe: (state = null, action) => state
   messages: messagesReducer,
-  channels: channelsReducer,
+  channels: identityReducer,
   activeChannel: activeChannelReducer,
-  member: memberReducer
+  member: identityReducer
 });
 
 const initialState = {
