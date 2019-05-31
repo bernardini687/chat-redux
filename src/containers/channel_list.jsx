@@ -32,8 +32,7 @@ class ChannelList extends React.Component {
   render() {
     return (
       <div className="channels-container">
-        <span>Redux Chat</span>
-        <ul>
+        <ul className="list-unstyled">
           {this.props.channels.map(this.renderChannel)}
         </ul>
       </div>

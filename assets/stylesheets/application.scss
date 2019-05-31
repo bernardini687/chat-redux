@@ -19,16 +19,25 @@ body {
 }
 form {
   input {
-    width: 80%;
+    width: 220px;
   }
   button {
-    width: 20%;
+    width: 50px;
   }
 }
-.channels-container ul li:hover {
-  cursor: pointer;
+.channels-container {
+  width: 150px;
+  ul li:hover {
+    cursor: pointer;
+  }
 }
 .messages {
   max-height: 500px;
   overflow: hidden;
+}
+.app {
+  @include flex(space-between);
+}
+.active {
+  font-weight: 900;
 }
